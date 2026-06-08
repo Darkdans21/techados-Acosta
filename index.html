@@ -1,299 +1,455 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Techados Acosta | Soldadura y Techados</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <title>Techados Acosta | Techados, soldadura y estructuras metálicas en Nuevo León</title>
+  <meta name="description" content="Techados Acosta realiza techados metálicos, policarbonato, galvateja, deck sintético, lambrim, pérgolas, estructuras y soldadura en Monterrey y área metropolitana. Cotiza por WhatsApp." />
+  <meta name="keywords" content="techados en Monterrey, techados en Apodaca, soldadura, herrería, policarbonato, galvateja, deck sintético, pérgolas, estructuras metálicas, Nuevo León" />
+  <meta name="theme-color" content="#0f172a" />
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f3f4f6;
-      color: #1f2933;
-      line-height: 1.6;
-    }
+  <meta property="og:title" content="Techados Acosta | Techados y soldadura" />
+  <meta property="og:description" content="Soluciones en techados, estructuras metálicas y soldadura para casa, negocio y obra." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="src/techoDeckSintetico.jpeg" />
 
-    header {
-      min-height: 80vh;
-      background:
-        linear-gradient(rgba(20, 29, 38, 0.78), rgba(20, 29, 38, 0.78)),
-        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .hero {
-      max-width: 900px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero p {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      margin-bottom: 30px;
-      color: #f9fafb;
-    }
-
-    .botones {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn-principal {
-      background: #f59e0b;
-      color: #111827;
-    }
-
-    .btn-principal:hover {
-      background: #d97706;
-      transform: translateY(-2px);
-    }
-
-    .btn-secundario {
-      border: 2px solid white;
-      color: white;
-    }
-
-    .btn-secundario:hover {
-      background: white;
-      color: #111827;
-      transform: translateY(-2px);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    .titulo-seccion {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #111827;
-    }
-
-    .intro {
-      background: white;
-      padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      font-size: 1.1rem;
-    }
-
-    .servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      border-top: 5px solid #f59e0b;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: #111827;
-      font-size: 1.3rem;
-    }
-
-    .card p {
-      color: #4b5563;
-    }
-
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .galeria img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    .contacto {
-      background: #111827;
-      color: white;
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .contacto h2 {
-      margin-bottom: 15px;
-      font-size: 2rem;
-    }
-
-    .contacto p {
-      margin-bottom: 10px;
-      color: #e5e7eb;
-    }
-
-    .whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      background: #25d366;
-      color: white;
-      padding: 15px 26px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .whatsapp:hover {
-      background: #1ebe5d;
-      transform: translateY(-2px);
-    }
-
-    footer {
-      background: #030712;
-      color: #d1d5db;
-      text-align: center;
-      padding: 22px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        min-height: 70vh;
-      }
-
-      .intro,
-      .contacto {
-        padding: 25px;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand fw-black d-flex align-items-center gap-2" href="#inicio">
+        <span class="brand-badge">TA</span>
+        <span>Techados Acosta</span>
+      </a>
 
-  <header>
-    <div class="hero">
-      <h1>Techados Acosta</h1>
-      <p>Servicios profesionales de soldadura, techados y estructuras metálicas.</p>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="botones">
-        <a href="#servicios" class="btn btn-principal">Ver servicios</a>
-        <a href="#contacto" class="btn btn-secundario">Solicitar cotización</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#materiales">Materiales</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trabajos">Trabajos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#zonas">Zonas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">Dudas</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-sm btn-warning fw-bold nav-cta" href="#cotizacion">
+              <i class="bi bi-whatsapp me-1"></i>Cotizar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center min-vh-100 pt-5">
+        <div class="col-lg-7">
+          <p class="eyebrow">Techados • Soldadura • Estructuras metálicas</p>
+          <h1 class="display-3 fw-black text-white mb-4">
+            Techados resistentes, funcionales y con acabado profesional
+          </h1>
+          <p class="lead text-white-75 mb-4">
+            Instalación de techados, pérgolas, policarbonato, galvateja, deck sintético,
+            estructuras metálicas, reparaciones y trabajos de soldadura para hogar, negocio y obra.
+          </p>
+
+          <div class="hero-pills mb-4">
+            <span><i class="bi bi-shield-check"></i> Trabajo garantizado</span>
+            <span><i class="bi bi-geo-alt"></i> Área metropolitana de Monterrey</span>
+            <span><i class="bi bi-tools"></i> Proyectos a medida</span>
+          </div>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <a class="btn btn-success btn-lg fw-bold js-whatsapp" href="#" target="_blank" rel="noopener">
+              <i class="bi bi-whatsapp me-2"></i>Cotizar por WhatsApp
+            </a>
+            <a class="btn btn-outline-light btn-lg fw-bold" href="#trabajos">
+              <i class="bi bi-images me-2"></i>Ver trabajos
+            </a>
+            <a class="btn btn-warning btn-lg fw-bold js-call" href="#">
+              <i class="bi bi-telephone me-2"></i>Llamar
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-5 mt-lg-0">
+          <div class="hero-card">
+            <img src="src/techoDeckSintetico.jpeg" alt="Techado con deck sintético y estructura metálica" />
+            <div class="hero-card-caption">
+              <strong>Acabados para interior y exterior</strong>
+              <span>Techados, lambrim, iluminación y estructura metálica.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-
-    <section>
-      <h2 class="titulo-seccion">¿Quiénes somos?</h2>
-      <div class="intro">
-        <p>
-          En <strong>Techados Acosta</strong> ofrecemos soluciones de soldadura,
-          techados y estructuras metálicas para hogares, negocios, patios,
-          cocheras, bodegas y espacios comerciales. Trabajamos con compromiso,
-          calidad y atención personalizada.
-        </p>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <h2 class="titulo-seccion">Nuestros servicios</h2>
-
-      <div class="servicios">
-        <div class="card">
-          <h3>Techados metálicos</h3>
-          <p>Instalación de techos para cocheras, patios, terrazas, bodegas y áreas de trabajo.</p>
-        </div>
-
-        <div class="card">
-          <h3>Soldadura en general</h3>
-          <p>Trabajos de soldadura para reparaciones, fabricación e instalación de piezas metálicas.</p>
-        </div>
-
-        <div class="card">
-          <h3>Estructuras metálicas</h3>
-          <p>Diseño y fabricación de estructuras resistentes para proyectos residenciales o comerciales.</p>
-        </div>
-
-        <div class="card">
-          <h3>Reparaciones</h3>
-          <p>Mantenimiento y reparación de techos, portones, barandales y estructuras existentes.</p>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <p class="section-label">¿Quiénes somos?</p>
+            <h2 class="section-title">Soluciones de herrería y techado para espacios que sí se usan</h2>
+          </div>
+          <div class="col-lg-7">
+            <div class="content-card">
+              <p class="mb-3">
+                En <strong>Techados Acosta</strong> realizamos trabajos de techado, soldadura y estructuras
+                metálicas para proteger, ampliar y mejorar espacios residenciales, comerciales e industriales.
+              </p>
+              <p class="mb-0">
+                La página está preparada para mostrar trabajos reales, materiales, zonas de servicio y cotizaciones
+                rápidas por WhatsApp. Se puede actualizar con nuevas fotos conforme se documenten más proyectos.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2 class="titulo-seccion">Trabajos y materiales</h2>
+    <section id="materiales" class="py-5 section-soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="section-label">Materiales</p>
+          <h2 class="section-title">Opciones para cada tipo de proyecto</h2>
+          <p class="section-subtitle">Estos materiales pueden ajustarse según presupuesto, diseño, exposición al sol y uso del espacio.</p>
+        </div>
 
-      <div class="galeria">
-        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="Trabajo de soldadura">
-        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80" alt="Estructura metálica">
-        <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?auto=format&fit=crop&w=800&q=80" alt="Herramientas de trabajo">
+        <div class="row g-4" id="materialsGrid"></div>
       </div>
     </section>
 
-    <section id="contacto">
-      <div class="contacto">
-        <h2>Solicita una cotización</h2>
-        <p>Atención para proyectos residenciales y comerciales.</p>
-        <p><strong>Teléfono:</strong> (xxx) xxx-xxxx</p>
-        <p><strong>Email:</strong> contacto@techadosacosta.com</p>
+    <section id="servicios" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="section-label">Servicios</p>
+          <h2 class="section-title">Trabajo para casa, negocio y obra</h2>
+          <p class="section-subtitle">Desde un techo para cochera hasta estructuras comerciales o reparaciones especializadas.</p>
+        </div>
 
-        <a class="whatsapp" href="https://wa.me/5218112345678" target="_blank">
-          Cotizar por WhatsApp
-        </a>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-house-door"></i>
+              <h3>Techados residenciales</h3>
+              <p>Cocheras, patios, terrazas, pasillos, áreas sociales y espacios exteriores.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-building"></i>
+              <h3>Techados comerciales</h3>
+              <p>Locales, bodegas, áreas de trabajo, accesos, fachadas y ampliaciones.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-fire"></i>
+              <h3>Soldadura especializada</h3>
+              <p>Estructuras, mesas, reparaciones, refuerzos, soportes y fabricación a medida.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-grid-3x3-gap"></i>
+              <h3>Pérgolas y diseños decorativos</h3>
+              <p>Proyectos con estructura metálica, lambrim, deck, iluminación y acabados visuales.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-wrench-adjustable"></i>
+              <h3>Reparaciones y mantenimiento</h3>
+              <p>Cambio de láminas, refuerzos, pintura, correcciones y mantenimiento por desgaste.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="service-card">
+              <i class="bi bi-rulers"></i>
+              <h3>Trabajo a medida</h3>
+              <p>Diseño según medidas, espacio, material, altura, caída de agua y necesidad del cliente.</p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
+    <section id="proceso" class="py-5 section-dark">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="section-label">Proceso</p>
+          <h2 class="section-title text-white">Así se trabaja una cotización</h2>
+          <p class="text-white-75">Mientras más datos envíe el cliente, más rápida y clara puede ser la orientación inicial.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="process-card">
+              <span>1</span>
+              <h3>Contacto inicial</h3>
+              <p>El cliente envía mensaje, fotos del área, municipio y medidas aproximadas.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="process-card">
+              <span>2</span>
+              <h3>Revisión</h3>
+              <p>Se identifica tipo de material, estructura necesaria y condiciones del espacio.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="process-card">
+              <span>3</span>
+              <h3>Cotización</h3>
+              <p>Se comparte una propuesta según medidas, materiales, traslado y alcance.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="process-card">
+              <span>4</span>
+              <h3>Instalación</h3>
+              <p>Se agenda el trabajo, se prepara material y se realiza la instalación o reparación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabajos" class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-4">
+          <p class="section-label">Trabajos realizados</p>
+          <h2 class="section-title">Galería de proyectos</h2>
+          <p class="section-subtitle">Ejemplos de techados, estructuras, acabados y soldadura. Las fichas pueden actualizarse con datos reales de cada obra.</p>
+        </div>
+
+        <div class="gallery-filters mb-4 text-center" id="galleryFilters"></div>
+        <div class="row g-4" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section id="zonas" class="py-5 section-soft">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <p class="section-label">Zona de servicio</p>
+            <h2 class="section-title">Atención en Monterrey y área metropolitana</h2>
+            <p class="section-subtitle text-start">
+              Base en Apodaca, Nuevo León. La zona puede ajustarse según tamaño del proyecto, disponibilidad y traslado.
+            </p>
+
+            <div class="zone-tags">
+              <span>Apodaca</span><span>Monterrey</span><span>Guadalupe</span><span>San Nicolás</span>
+              <span>Escobedo</span><span>Juárez</span><span>Santa Catarina</span><span>García</span>
+              <span>Pesquería</span><span>Ciénega de Flores</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="content-card h-100">
+              <h3 class="mb-3">¿Puede viajar a otras zonas?</h3>
+              <p>
+                Para trabajos grandes o proyectos especiales, se puede revisar traslado a otros municipios o estados.
+                Conviene confirmar ubicación, medidas, acceso al área y condiciones de instalación.
+              </p>
+              <a class="btn btn-warning fw-bold js-whatsapp" href="#" target="_blank" rel="noopener">
+                Preguntar disponibilidad
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cotizacion" class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="quote-info h-100">
+              <p class="section-label">Cotización</p>
+              <h2>Solicita información por WhatsApp</h2>
+              <p>Para cotizar mejor, envía fotos del área, medidas aproximadas, colonia/municipio y el tipo de material que te interesa.</p>
+              <ul class="quote-list">
+                <li><i class="bi bi-check-circle"></i> Fotos del espacio</li>
+                <li><i class="bi bi-check-circle"></i> Largo, ancho y altura aproximada</li>
+                <li><i class="bi bi-check-circle"></i> Municipio o colonia</li>
+                <li><i class="bi bi-check-circle"></i> Material o acabado deseado</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="form-card">
+              <h3 class="mb-3">Armar mensaje de cotización</h3>
+              <form id="quoteForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" name="telefono" placeholder="Tu WhatsApp" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Municipio o colonia</label>
+                    <input type="text" class="form-control" name="ubicacion" placeholder="Ej. Apodaca, Guadalupe..." required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Tipo de trabajo</label>
+                    <select class="form-select" name="servicio" required>
+                      <option value="">Selecciona una opción</option>
+                      <option>Techado residencial</option>
+                      <option>Techado comercial</option>
+                      <option>Policarbonato</option>
+                      <option>Galvateja</option>
+                      <option>Deck sintético</option>
+                      <option>Pérgola</option>
+                      <option>Soldadura / estructura metálica</option>
+                      <option>Reparación o mantenimiento</option>
+                      <option>Otro</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Descripción</label>
+                    <textarea class="form-control" name="descripcion" rows="4" placeholder="Describe medidas aproximadas, material, uso del espacio y cualquier detalle importante." required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-success btn-lg w-100 fw-bold" type="submit">
+                      <i class="bi bi-whatsapp me-2"></i>Enviar solicitud por WhatsApp
+                    </button>
+                    <p class="small text-muted mt-2 mb-0">
+                      Este formulario no guarda datos en la página; solo prepara un mensaje para WhatsApp.
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-5 section-soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <p class="section-label">Preguntas frecuentes</p>
+          <h2 class="section-title">Dudas comunes antes de cotizar</h2>
+        </div>
+
+        <div class="accordion custom-accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                ¿Qué datos necesito para pedir una cotización?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Lo ideal es enviar fotos del área, medidas aproximadas, municipio o colonia, altura disponible y el tipo de material que te interesa.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                ¿Trabajan solo techados o también soldadura?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Además de techados, se pueden revisar trabajos de soldadura, estructuras metálicas, reparaciones, mesas, pérgolas y proyectos a medida.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                ¿La cotización final puede cambiar?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Sí. El precio final depende de medidas reales, material, acceso al lugar, altura, preparación, traslado y detalles del proyecto.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-5 section-contact">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <p class="section-label">Contacto</p>
+            <h2 class="section-title text-white">¿Listo para revisar tu proyecto?</h2>
+            <p class="text-white-75 mb-4">Manda mensaje y comparte fotos o medidas aproximadas para recibir orientación.</p>
+            <div class="contact-lines">
+              <p><i class="bi bi-telephone"></i> <a class="js-call-text" href="#">+52 (81) 1587-6112</a></p>
+              <p><i class="bi bi-envelope"></i> <a href="mailto:techadosacosta@gmail.com">techadosacosta@gmail.com</a></p>
+              <p><i class="bi bi-geo-alt"></i> Apodaca, Nuevo León. Servicio en área metropolitana de Monterrey.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="contact-cta">
+              <a class="btn btn-success btn-lg w-100 fw-bold mb-3 js-whatsapp" href="#" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+              </a>
+              <a class="btn btn-warning btn-lg w-100 fw-bold mb-3 js-call" href="#">
+                <i class="bi bi-telephone me-2"></i>Llamar ahora
+              </a>
+              <a class="btn btn-outline-light btn-lg w-100 fw-bold" href="https://www.facebook.com/techados.acosta" target="_blank" rel="noopener">
+                <i class="bi bi-facebook me-2"></i>Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Techados Acosta. Todos los derechos reservados.</p>
+  <a class="whatsapp-float js-whatsapp" href="#" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <div class="modal fade" id="workModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <img id="modalImage" src="" alt="" class="w-100 modal-img">
+          <div class="p-4">
+            <h3 id="modalTitle" class="mb-2"></h3>
+            <p id="modalDescription" class="text-muted mb-2"></p>
+            <span id="modalTag" class="badge rounded-pill text-bg-warning"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="mb-0">© 2026 Techados Acosta. Todos los derechos reservados.</p>
+      <p class="mb-0">Sitio informativo para cotizaciones y contacto.</p>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

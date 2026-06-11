@@ -12,37 +12,55 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       icon: "bi-brightness-high",
       title: "Policarbonato",
-      text: "Ideal para permitir entrada de luz natural, proteger de lluvia y dar un acabado moderno.",
-      features: ["Translúcido o transparente", "Protección UV", "Buena opción para pasillos y patios"]
+      image: "src/ilustracion-policarbonato.svg",
+      alt: "Ilustración de techado con paneles de policarbonato",
+      text: "Cubierta translúcida o transparente que deja pasar luz natural y protege de la lluvia.",
+      use: "Ideal para pasillos, patios, domos ligeros y áreas donde se busca iluminación natural.",
+      features: ["Entrada de luz natural", "Protección UV", "Buena opción para espacios estrechos"]
     },
     {
       icon: "bi-layers",
       title: "Lámina acanalada",
-      text: "Opción funcional, resistente y práctica para techados residenciales, comerciales o de trabajo.",
+      image: "src/ilustracion-lamina-acanalada.svg",
+      alt: "Ilustración de lámina acanalada para techados",
+      text: "Lámina metálica con canales que ayudan a dar rigidez y dirigir el agua.",
+      use: "Funciona bien en cocheras, bodegas, áreas de trabajo y techos prácticos de bajo mantenimiento.",
       features: ["Económica", "Resistente", "Instalación ágil"]
     },
     {
       icon: "bi-house-door",
       title: "Galvateja",
-      text: "Combina resistencia metálica con apariencia tipo teja para un acabado más tradicional.",
-      features: ["Apariencia decorativa", "Durable", "Buena para fachadas y casas"]
+      image: "src/ilustracion-galvateja.svg",
+      alt: "Ilustración de techo tipo galvateja",
+      text: "Cubierta metálica con apariencia de teja tradicional, pero más ligera y práctica.",
+      use: "Buena para fachadas, casas, terrazas y espacios donde importa mucho la apariencia.",
+      features: ["Apariencia decorativa", "Durable", "Estilo residencial"]
     },
     {
       icon: "bi-grid-3x3-gap",
       title: "Deck sintético",
-      text: "Acabado tipo madera para terrazas, techos decorativos y áreas exteriores con diseño.",
+      image: "src/ilustracion-deck-sintetico.svg",
+      alt: "Ilustración de deck sintético tipo madera",
+      text: "Acabado tipo madera usado para dar una vista cálida y moderna al espacio.",
+      use: "Ideal en terrazas, áreas sociales, plafones decorativos y techados con diseño.",
       features: ["Vista elegante", "Uso exterior", "Acabado cálido"]
     },
     {
       icon: "bi-tree",
       title: "Lambrim",
-      text: "Revestimiento para techos o muros que mejora la presentación del espacio.",
-      features: ["Acabado decorativo", "Sensación cálida", "Útil en interiores y terrazas"]
+      image: "src/ilustracion-lambrim.svg",
+      alt: "Ilustración de lambrim para revestimiento",
+      text: "Revestimiento decorativo para techos o muros que mejora la presentación del área.",
+      use: "Se usa en interiores, terrazas y acabados donde se busca una vista más fina.",
+      features: ["Acabado decorativo", "Sensación cálida", "Útil en muros y plafones"]
     },
     {
       icon: "bi-flower2",
       title: "Pérgolas",
-      text: "Estructuras decorativas y funcionales para jardines, patios, terrazas y áreas sociales.",
+      image: "src/ilustracion-pergola.svg",
+      alt: "Ilustración de pérgola metálica para exterior",
+      text: "Estructuras decorativas y funcionales para crear sombra, diseño y áreas sociales.",
+      use: "Ideales para jardines, patios, terrazas, cocheras abiertas y espacios de descanso.",
       features: ["Diseño a medida", "Metal y acabados mixtos", "Ideal para exteriores"]
     }
   ];
@@ -111,12 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = materials.map((material) => `
       <div class="col-md-6 col-lg-4">
         <article class="material-card fade-in">
-          <span class="material-icon"><i class="bi ${material.icon}"></i></span>
-          <h3>${material.title}</h3>
-          <p>${material.text}</p>
-          <ul class="feature-list">
-            ${material.features.map((feature) => `<li><i class="bi bi-check-circle-fill"></i>${feature}</li>`).join("")}
-          </ul>
+          <div class="material-visual">
+            <img src="${material.image}" alt="${material.alt}" loading="lazy">
+          </div>
+          <div class="material-card-body">
+            <span class="material-icon"><i class="bi ${material.icon}"></i></span>
+            <h3>${material.title}</h3>
+            <p>${material.text}</p>
+            <p class="material-use"><strong>Uso común:</strong> ${material.use}</p>
+            <ul class="feature-list">
+              ${material.features.map((feature) => `<li><i class="bi bi-check-circle-fill"></i>${feature}</li>`).join("")}
+            </ul>
+          </div>
         </article>
       </div>
     `).join("");

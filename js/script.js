@@ -133,9 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${material.image}" alt="${material.alt}" loading="lazy">
           </div>
           <div class="material-card-body">
-            <span class="material-icon"><i class="bi ${material.icon}"></i></span>
-            <h3>${material.title}</h3>
-            <p>${material.text}</p>
+            <p class="material-description">${material.text}</p>
             <p class="material-use"><strong>Uso común:</strong> ${material.use}</p>
             <ul class="feature-list">
               ${material.features.map((feature) => `<li><i class="bi bi-check-circle-fill"></i>${feature}</li>`).join("")}
